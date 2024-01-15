@@ -41,7 +41,7 @@
     <form action="order" method="post">
     <!-- here actionName within NewOrder routine changes to 'order' -->
         <input type="hidden" name="actionName" value="order"/>
-        ${nameSurname}: <input type="text" placeholder="Степан Жменя" name="name" title="Степан Жменя" autofocus required pattern="^[А-ЯҐЇЄ]{1}[а-яґїє]{2,}\s[А-ЯҐЇЄ]{1}[а-яґїє]{2,}|[A-Z]{1}[a-z]{2,}\s[A-Z]{1}[a-z]{2,}$"/>
+        ${nameSurname}: <input type="text" placeholder="Степан Жменя" name="name" title="Степан Жменя" autofocus required pattern="^[А-ЯҐЇІЄ]{1}[а-яґїіє]{2,}\s[А-ЯҐЇІЄ]{1}[а-яґїіє]{2,}|[A-Z]{1}[a-z]{2,}\s[A-Z]{1}[a-z]{2,}$"/>
         <br><br>
         ${passdata}: <input type="text" placeholder="AB123456" title="AB123456 (латина latin)" name="passdata" autofocus required pattern="^[A-Z]{2}[0-9]{6}"/>
         <br><br>

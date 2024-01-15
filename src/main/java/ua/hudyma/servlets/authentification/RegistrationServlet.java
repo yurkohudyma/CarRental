@@ -101,7 +101,7 @@ public class RegistrationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         if (user != null) {
-            if (user.getAccesslevel().equals(AccessLevel.ADMIN)||user.getAccesslevel().equals(AccessLevel.MANAGER)) {
+            if (user.getAccesslevel().equals(AccessLevel.ADMIN) || user.getAccesslevel().equals(AccessLevel.MANAGER)) {
                 response.sendRedirect(ADMIN_JSP);
             } else {
                 response.sendRedirect(USER_JSP);
@@ -110,5 +110,4 @@ public class RegistrationServlet extends HttpServlet {
             fwd(request, response);
         }
     }
-
 }
