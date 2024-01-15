@@ -1,3 +1,3 @@
 # Car Rental
 
-Servlet-based car rental wev-service
+Servlet-based car rental web-service
