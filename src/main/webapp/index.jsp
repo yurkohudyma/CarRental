@@ -31,7 +31,7 @@
 	--%>
 </head>
 <body>
-<% response.sendRedirect("/CarRental/authentification"); %>
+<% response.sendRedirect("/authentification"); %>
 <%--
 
 	<form action="" method="post">

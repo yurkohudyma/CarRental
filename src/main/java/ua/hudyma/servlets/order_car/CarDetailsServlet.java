@@ -26,9 +26,9 @@ public class CarDetailsServlet extends HttpServlet {
 
 	private static final Logger LOG = Logger.getLogger(CarDetailsServlet.class);
 	
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
     private static final String CAR_DETAILS_JSP = "/jsp/car.jsp";
-    private static final String CAR_DETAILS = CAR_RENTAL+"/car";
+    private static final String CAR_DETAILS = CAR_RENTAL+"car";
     private static void fwd(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(CAR_DETAILS_JSP).forward(req, resp);

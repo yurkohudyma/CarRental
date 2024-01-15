@@ -32,9 +32,9 @@ public class OrderAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger.getLogger(OrderAdminServlet.class);
     
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
 	private static final String ORDER_ADMIN_JSP = "/jsp/admin/admin_order.jsp";
-    private static final String ORDER_ADMIN_PAGE = CAR_RENTAL+"/admin_order";
+    private static final String ORDER_ADMIN_PAGE = CAR_RENTAL+"admin_order";
     private static final String PROPERTY = "local";
     private static final int PER_PAGE = 10;
 

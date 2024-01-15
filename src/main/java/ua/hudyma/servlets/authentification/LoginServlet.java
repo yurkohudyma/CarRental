@@ -27,11 +27,11 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger.getLogger(LoginServlet.class);
 	private static final String PROPERTY = "local";
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
 
     private static final String LOGIN_JSP = "/jsp/authentification/login.jsp";
-    private static final String USER_JSP = CAR_RENTAL+"/user";
-    private static final String ADMIN_JSP = CAR_RENTAL+"/admin";
+    private static final String USER_JSP = CAR_RENTAL+"user";
+    private static final String ADMIN_JSP = CAR_RENTAL+"admin";
 
     private static void fwd(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
         String act = req.getParameter("actionName");
         /** check whether LOGIN form was submitted */
         switch (act) {
-            case "authentification":
+            case "authentification" -> {
                 try {
                     User user = new User(email);
                     user = user.logIn(email, password);
@@ -68,23 +68,22 @@ public class LoginServlet extends HttpServlet {
 
                     if (user.getAccesslevel().equals(AccessLevel.ADMIN)) {
                         req.getSession().setAttribute("isAdmin", true);
-                    }
-                    else if (user.getAccesslevel().equals(AccessLevel.MANAGER)) {
+                    } else if (user.getAccesslevel().equals(AccessLevel.MANAGER)) {
                         req.getSession().setAttribute("isManager", true);
                     }
-                    if (user.getAccesslevel().equals(AccessLevel.ADMIN)||user.getAccesslevel().equals(AccessLevel.MANAGER)) {
+                    if (user.getAccesslevel().equals(AccessLevel.ADMIN) || user.getAccesslevel().equals(AccessLevel.MANAGER)) {
                         resp.sendRedirect(ADMIN_JSP);
                     } else if (user.getAccesslevel().equals(AccessLevel.USER)) {
                         resp.sendRedirect(USER_JSP);
-                        
+
                         /** this code concerns BLOCKED users*/
-                    } else { 
-                    	Locale locale = (Locale) req.getSession().getAttribute("locale");
+                    } else {
+                        Locale locale = (Locale) req.getSession().getAttribute("locale");
                         ResourceBundle resourceBundle = ResourceBundle.getBundle(PROPERTY, locale);
-                    	String error = resourceBundle.getString("login.login_user_blocked");
+                        String error = resourceBundle.getString("login.login_user_blocked");
                         req.setAttribute("auth_error", error);
                         LOG.info(error);
-                    	fwd(req, resp);
+                        fwd(req, resp);
                     }
 
                 } catch (LoginException e) {
@@ -95,14 +94,12 @@ public class LoginServlet extends HttpServlet {
                     LOG.info(error);
                     fwd(req, resp);
                 }
-                break;
-            case "logout":
+            }
+            case "logout" -> {
                 req.getSession().invalidate();
                 fwd(req, resp);
-                break;
-            default:
-                fwd(req, resp);
-                break;
+            }
+            default -> fwd(req, resp);
         }
 
     }

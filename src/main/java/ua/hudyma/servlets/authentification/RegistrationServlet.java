@@ -28,11 +28,11 @@ public class RegistrationServlet extends HttpServlet {
 
 	private static final Logger LOG = Logger.getLogger(RegistrationServlet.class);
 
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
 	private static final String REG_JSP = "/jsp/authentification/registration.jsp";
-    private static final String LOGIN_JSP = CAR_RENTAL+"/authentification";
-    private static final String USER_JSP = CAR_RENTAL+"/user";
-    private static final String ADMIN_JSP = CAR_RENTAL+"/admin";
+    private static final String LOGIN_JSP = CAR_RENTAL+"authentification";
+    private static final String USER_JSP = CAR_RENTAL+"user";
+    private static final String ADMIN_JSP = CAR_RENTAL+"admin";
 	
     private static final String PROPERTY = "local";
 

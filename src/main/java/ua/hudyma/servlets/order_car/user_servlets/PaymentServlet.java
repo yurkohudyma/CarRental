@@ -35,9 +35,9 @@ public class PaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger.getLogger(PaymentServlet.class);
 	
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
     private static final String PAYMENT_BILL_JSP = "/jsp/user/bill.jsp";
-    private static final String ORDER_USER_PAGE = CAR_RENTAL+"/user_order";
+    private static final String ORDER_USER_PAGE = CAR_RENTAL+"user_order";
     private static final String PROPERTY = "local";
 
     private static void fwd(HttpServletRequest req, HttpServletResponse resp)

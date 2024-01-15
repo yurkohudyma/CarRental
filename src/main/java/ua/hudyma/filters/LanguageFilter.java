@@ -16,7 +16,7 @@ import java.util.Locale;
  */
 @WebFilter(filterName = "LanguageFilter")
 public class LanguageFilter implements Filter {
-	private static final String CAR_RENTAL = "CarRental";
+	private static final String CAR_RENTAL = "/";
     public static final Logger LOG= Logger.getLogger(LanguageFilter.class);
 
     public void destroy() {
@@ -49,7 +49,7 @@ public class LanguageFilter implements Filter {
             } else if (loc != null) {
                 Locale locStartPage = new Locale(loc);
                 session.setAttribute("locale", locStartPage);
-                response.sendRedirect("/"+CAR_RENTAL);
+                response.sendRedirect(CAR_RENTAL);
             } else {
                 chain.doFilter(req, resp);
             }

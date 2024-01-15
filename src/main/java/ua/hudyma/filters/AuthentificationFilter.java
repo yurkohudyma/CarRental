@@ -19,12 +19,12 @@ import java.util.List;
 @WebFilter(filterName = "AuthentificationFilter")
 public class AuthentificationFilter implements Filter {
     public static final Logger LOG= Logger.getLogger(AuthentificationFilter.class);
-    private static final String CAR_RENTAL = "/CarRental/";
+    private static final String CAR_RENTAL = "/";
     private static final String AUTH_PAGE = CAR_RENTAL+"auth_error.jsp";
     private static final String LOGIN_PAGE = CAR_RENTAL+"authentification";
     private static final String REG_PAGE = CAR_RENTAL+"registration";
     private static final String START_PAGE = CAR_RENTAL;
-    private static final String INDEX_PAGE = CAR_RENTAL+"/index";
+    private static final String INDEX_PAGE = CAR_RENTAL+"index";
     
     List<String> noRegNeeded;
 

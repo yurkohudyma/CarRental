@@ -29,11 +29,11 @@ public class UserServlet extends HttpServlet {
     
 	private static final long serialVersionUID = 1L;
 	/** CarRental URL is obligatory here, as Eclipse/Tomcat ain't run the webapp with no project's name URL-suffix, as IntelliJ does */
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
 	private static final Logger LOG = Logger.getLogger(UserServlet.class);
     private static final String USER_JSP = "/jsp/user/user.jsp";
-    private static final String USER_PAGE = CAR_RENTAL+"/user";
-    private static final String ORDER_JSP = CAR_RENTAL+"/order";
+    private static final String USER_PAGE = CAR_RENTAL+"user";
+    private static final String ORDER_JSP = CAR_RENTAL+"order";
     private static final int PER_PAGE = 10;
 
     private static void fwd(HttpServletRequest req, HttpServletResponse resp)

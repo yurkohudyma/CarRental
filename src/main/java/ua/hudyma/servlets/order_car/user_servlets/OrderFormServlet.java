@@ -29,9 +29,9 @@ public class OrderFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger.getLogger(OrderFormServlet.class);
 	
-	private static final String CAR_RENTAL = "/CarRental";
+	private static final String CAR_RENTAL = "/";
 	private static final String ORDER_JSP = "/jsp/user/order.jsp";
-	private static final String USER_PAGE = CAR_RENTAL+"/user";
+	private static final String USER_PAGE = CAR_RENTAL+"user";
 	private static final String PROPERTY = "local";
 	/* MySQL retrieves and displays DATE values in 'YYYY-MM-DD' format. This var change has no effect*/ 
 	public static final String FORMATTER_PATTERN = "yyyy-MM-dd";
